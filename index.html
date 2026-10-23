@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sleepet Interactive Demo</title>
-    <link rel="stylesheet" href="./styles.css?v=home-routine-pill-color-2" />
+    <link rel="stylesheet" href="./styles.css?v=home-hifi-1" />
     <link rel="stylesheet" href="./onboarding-interactions.css?v=home-night-particles" />
     <link rel="stylesheet" href="./preferences-overrides.css" />
     <link rel="stylesheet" href="./flow.css?v=wake-medium-video-fit" />
-    <link rel="stylesheet" href="./morning.css?v=stretch-mocha-video" />
+    <link rel="stylesheet" href="./morning.css?v=morning-setting-hifi-1" />
     <link rel="stylesheet" href="./reports.css" />
   </head>
   <body>
@@ -105,14 +105,15 @@
           </section>
 
           <section class="onboarding-screen home-screen" data-screen="home" aria-labelledby="homeGreeting" hidden>
-            <img class="home-landscape" src="./assets/onboarding/raw/home-raw-01.png" alt="" aria-hidden="true" draggable="false" />
-            <p class="home-greeting" id="homeGreeting">Good evening, Sally.</p>
-            <button class="routine-pill" id="routineButton" type="button"><img class="routine-icon" src="./assets/onboarding/raw/home-raw-04.png" alt="" /><span>Tomorrow’s morning routine</span><span class="routine-arrows" aria-hidden="true"><img src="./assets/onboarding/raw/home-raw-10.png" alt="" /></span></button>
-            <div class="home-message" id="homeMessage" aria-live="polite" aria-atomic="true"><span class="home-message-text" id="homeMessageText">Take it slow tonight,<br />I&#8217;m here..</span></div>
+            <img class="home-landscape" src="./assets/onboarding/home-background-sunset.png" alt="" aria-hidden="true" draggable="false" />
+            <div class="home-status-bar" aria-hidden="true"><span>9:41</span><img src="./assets/onboarding/svg/home-status-icons.svg" alt="" /></div>
+            <p class="home-greeting" id="homeGreeting">Good evening,<br />Sally.</p>
+            <div class="home-message" id="homeMessage" aria-live="polite" aria-atomic="true"><span class="home-message-text" id="homeMessageText">Take it slow tonight,<br />I&#8217;m here.</span></div>
             <button class="home-pet-art" id="homePetArt" type="button" aria-label="Hear another message from Mocha"><img src="./assets/onboarding/mocha-slow-head-sway.gif" alt="" draggable="false" /></button>
-            <p class="home-pet-hint">Tap <span id="homePetName">Mocha</span> to interact</p>
+            <p class="home-pet-hint">Tap <span id="homePetName">Mocha</span> to chat</p>
+            <div class="home-floating-shortcuts" aria-hidden="true"><img src="./assets/onboarding/svg/home-ar-shortcut.svg" alt="" /><img src="./assets/onboarding/svg/home-chat-shortcut.svg" alt="" /></div>
             <button class="home-primary" id="startSleepButton" type="button">Ready to sleep with <span id="homeReadyName">Mocha</span></button>
-            <button class="home-secondary" type="button">Meet <span id="homeMeetName">Mocha</span> in AR</button>
+            <button class="routine-pill" id="routineButton" type="button">Tomorrow’s morning routine</button>
             <nav class="home-bottom-nav" aria-label="Home navigation">
               <button class="home-nav-button is-active" type="button" aria-label="Home"><img src="./assets/nav-home.svg" alt="" /></button>
               <button class="home-nav-button" type="button" aria-label="Sleep"><img src="./assets/nav-sleep.svg" alt="" /></button>
@@ -230,23 +231,24 @@
           </section>
 
           <section class="onboarding-screen morning-setting-screen" data-screen="morning-setting" aria-labelledby="morningSettingTitle" hidden>
-            <button class="morning-setting-back" id="morningSettingBack" type="button" aria-label="Back to Home">‹</button>
+            <div class="home-status-bar" aria-hidden="true"><span>9:41</span><img src="./assets/onboarding/svg/home-status-icons.svg" alt="" /></div>
+            <button class="morning-setting-back" id="morningSettingBack" type="button" aria-label="Back to Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 3-9 9 9 9" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
             <h1 id="morningSettingTitle">Tomorrow’s Todo...</h1>
             <p class="morning-setting-subtitle">Keep it light. You can change anything.</p>
             <section class="gentle-start-card" aria-label="Gentle start">
               <h2>Gentle start</h2>
-              <label><input type="checkbox" data-gentle="water" checked /><span>Drink a glass of water</span></label>
-              <label><input type="checkbox" data-gentle="stretch" checked /><span>Stretch · 5min</span></label>
-              <label><input type="checkbox" data-gentle="breakfast" /><span>Make breakfast</span></label>
+              <label><input type="checkbox" data-gentle="water" checked /><img src="./assets/flow/setting-water.svg" alt="" /><span>Drink a glass of water</span></label>
+              <label><input type="checkbox" data-gentle="stretch" checked /><img src="./assets/flow/setting-stretch.svg" alt="" /><span>Stretch · 5min</span></label>
+              <label><input type="checkbox" data-gentle="breakfast" /><img src="./assets/flow/setting-breakfast.svg" alt="" /><span>Make breakfast</span></label>
               <img class="gentle-divider" src="./assets/flow/setting-divider.svg" alt="" />
-              <button id="changeRoutine" class="change-routine" type="button">change routine</button>
+              <button id="changeRoutine" class="change-routine" type="button"><img src="./assets/flow/setting-gear.svg" alt="" /><span>Manage other settings</span><img src="./assets/flow/setting-chevron.svg" alt="" /></button>
             </section>
             <h2 class="setting-day-question">How would you like to spend<br />your day tomorrow?</h2>
             <div class="setting-suggestions" id="settingSuggestions">
               <button type="button" data-suggestion="Go grocery shopping" aria-pressed="true">Go grocery shopping</button>
-              <button type="button" data-suggestion="Group meeting" aria-pressed="true">Group meeting</button>
-              <button type="button" data-suggestion="Call dad to celebrate his birthday" aria-pressed="false">Call dad to celebrate his birthday</button>
               <button type="button" data-suggestion="Gym day" aria-pressed="false">Gym day</button>
+              <button type="button" data-suggestion="Group meeting" aria-pressed="true">Group meeting</button>
+              <button type="button" data-suggestion="Call family or a friend" aria-pressed="false">Call family or a friend</button>
             </div>
             <section class="setting-events-card" aria-label="Tomorrow's events">
               <div class="setting-date-row"><button id="settingDateButton" type="button" aria-label="Choose a date for tomorrow's events" aria-haspopup="dialog" aria-expanded="false"><span id="settingDateText">2026/09/08</span><img src="./assets/flow/setting-calendar.svg" alt="" /></button></div>
@@ -417,9 +419,9 @@
         <img class="device-bezel" src="./assets/device/iphone-17-pro-bezel.png" alt="" aria-hidden="true" />
       </div>
     </main>
-    <script src="./app.js?v=morning-flow-stagger-reports-1"></script>
+    <script src="./app.js?v=home-hifi-1"></script>
     <script src="./flow.js?v=flow-videos-visible"></script>
-    <script src="./morning.js?v=stretch-mocha-video"></script>
+    <script src="./morning.js?v=morning-setting-hifi-1"></script>
     <script src="./stretch-video.js?v=stretch-mocha-video-clean-2"></script>
     <script src="./home-foreground.js?v=home-night-particles-more-2"></script>
     <script src="./report-model.js"></script>

@@ -162,7 +162,6 @@ function renderOnboarding() {
   $("meetSpeechName").textContent = name;
   $("homePetName").textContent = name;
   $("homeReadyName").textContent = name;
-  $("homeMeetName").textContent = name;
   $("homePetArt").setAttribute("aria-label", `Hear another message from ${name}`);
   $("petNameInput").value = name;
   $("petBreed").value = onboardingState.breed;
@@ -248,7 +247,7 @@ $("meetContinue").addEventListener("click", showHome);
 $("meetChange").addEventListener("click", () => showOnboardingScreen("personalise"));
 $("homeProfileButton").addEventListener("click", showPreferences);
 const homeMessages = [
-  "Take it slow tonight,\nI\u2019m here..",
+  "Take it slow tonight,\nI\u2019m here.",
   "You can rest now,\nI\u2019ll stay close.",
   "Let the day fade,\nI\u2019m right here.",
   "No need to rush,\nI\u2019m beside you.",

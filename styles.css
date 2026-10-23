@@ -215,25 +215,29 @@ button { border: 0; cursor: pointer; }
 .meet-confirm { flex: 0 0 auto; }
 .meet-change { margin-top: 37px; color: #1d4975; background: transparent; font: 400 24px/30px Roboto, Arial, sans-serif; cursor: pointer; }
 
-.home-screen { overflow: hidden; color: #fff; background: #0a2f61 url("./assets/onboarding/raw/home-raw-01.png") center top / cover no-repeat; }
-.home-greeting { position: absolute; left: 28px; top: 78px; margin: 0; color: #fff; font: 400 19px/24px Roboto, Arial, sans-serif; }
-.routine-pill { position: absolute; left: 21px; top: 111px; width: 318px; height: 45px; display: flex; align-items: center; gap: 10px; padding: 0 10px 0 4px; border-radius: 24px; color: #fff; background: linear-gradient(100deg, rgba(8,33,77,.85) 0%, rgba(11,36,78,.9) 56%, rgba(19,47,89,.84) 100%); font: 400 15px/20px Roboto, Arial, sans-serif; text-align: left; }
-.routine-icon { width: 36px; height: 36px; border-radius: 50%; }
-.routine-arrows { width: 45px; height: 20px; margin-left: auto; overflow: hidden; }
-.routine-arrows img { display: block; width: 91px; height: 85px; max-width: none; transform: translate(-15px, -5px); }
-.home-message { position: absolute; left: 139px; bottom: 443px; width: max-content; max-width: 244px; min-height: 65px; display: flex; align-items: center; padding: 10px 15px; border: 1px solid rgba(255,255,255,.35); border-radius: 19px; color: #fff; background: rgba(25,81,137,.68); font: 400 15px/19px Roboto, Arial, sans-serif; transition: width 350ms ease, height 350ms ease; }
+.home-screen { overflow: hidden; color: #fff; background: #0a2f61 url("./assets/onboarding/home-background-sunset.png") center top / cover no-repeat; }
+.device-frame:has(.home-screen:not([hidden])) { width: 402px; height: 874px; }
+.device-frame:has(.home-screen:not([hidden])) > .phone { left: 0; top: 0; border-radius: 18px; }
+.device-frame:has(.home-screen:not([hidden])) > .device-status-bar { display: none; }
+.device-frame:has(.home-screen:not([hidden])) > .device-bezel { display: none; }
+.home-status-bar { position: absolute; left: 56px; right: 36px; top: 23px; display: flex; align-items: center; justify-content: space-between; color: #fff; font: 600 18px/24px Roboto, Arial, sans-serif; letter-spacing: .1px; pointer-events: none; }
+.home-status-bar img { display: block; width: 80px; height: 16px; }
+.home-greeting { position: absolute; left: 28px; top: 86px; margin: 0; color: #fff; font: 400 21px/28px Roboto, Arial, sans-serif; }
+.home-message { position: absolute; left: 138px; bottom: 443px; width: max-content; max-width: 244px; min-height: 65px; display: flex; align-items: center; padding: 10px 16px; border: 1px solid rgba(255,255,255,.35); border-radius: 21px; color: #fff; background: rgba(28,48,89,.64); backdrop-filter: blur(5px); font: 400 16px/22px Roboto, Arial, sans-serif; transition: width 350ms ease, height 350ms ease; }
 .home-message-text { display: block; white-space: pre-line; opacity: 1; transform: translateY(0); transition: opacity 180ms ease, transform 180ms ease; }
 .home-message-text.is-fading { opacity: 0; transform: translateY(3px); }
-.home-pet-art { position: absolute; left: 39px; top: 438px; width: 153px; height: 180px; padding: 0; border: 0; background: transparent; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.home-pet-art { position: absolute; left: 20px; top: 405px; width: 175px; height: 215px; padding: 0; border: 0; background: transparent; cursor: pointer; transform: scale(.77, .83); transform-origin: center bottom; -webkit-tap-highlight-color: transparent; }
 .home-pet-art:focus-visible { outline: 2px solid #e2eff9; outline-offset: 5px; border-radius: 18px; }
 .home-pet-art img { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-drag: none; }
-.home-pet-hint { position: absolute; left: 44px; top: 621px; margin: 0; color: #e2eff9; font: italic 13px/18px Roboto, Arial, sans-serif; pointer-events: none; }
-.home-primary, .home-secondary { position: absolute; left: 21px; width: 360px; height: 51px; border-radius: 26px; font: 400 18px/23px Roboto, Arial, sans-serif; cursor: pointer; }
-.home-primary { top: 660px; color: #082b5b; background: #d9eef7; }
-.home-secondary { top: 725px; border: 1px solid #d9eef7; color: #fff; background: rgba(4,43,91,.38); }
-.home-bottom-nav { position: absolute; left: 0; right: 0; bottom: 0; height: 66px; display: flex; align-items: center; justify-content: space-around; padding: 0 25px; background: rgba(0,30,77,.78); }
+.home-pet-hint { position: absolute; left: 50px; top: 624px; margin: 0; color: #e2eff9; font: italic 13px/18px Roboto, Arial, sans-serif; pointer-events: none; }
+.home-floating-shortcuts { position: absolute; top: 480px; right: 21px; display: flex; flex-direction: column; gap: 44px; width: 46px; pointer-events: none; }
+.home-floating-shortcuts img { display: block; width: 46px; height: 46px; }
+.home-primary, .routine-pill { position: absolute; left: 21px; width: 360px; height: 51px; border-radius: 26px; font: 400 18px/23px Roboto, Arial, sans-serif; text-align: center; cursor: pointer; }
+.home-primary { top: 660px; color: #082b5b; background: #d9eef7; font-size: 19px; }
+.routine-pill { top: 725px; border: 1px solid #0877b8; color: #fff; background: rgba(6,41,78,.62); backdrop-filter: blur(6px); }
+.home-bottom-nav { position: absolute; left: 0; right: 0; bottom: 0; height: 66px; display: flex; align-items: center; justify-content: space-around; padding: 0 25px; background: rgba(0,30,77,.82); }
 .home-nav-button { width: 112px; height: 58px; display: grid; place-items: center; border-radius: 13px; background: transparent; cursor: pointer; }
-.home-nav-button.is-active { background: rgba(114,163,216,.35); }
+.home-nav-button.is-active { background: rgba(160,189,226,.24); }
 .home-nav-button img { width: 29px; height: 29px; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -250,6 +254,8 @@ button { border: 0; cursor: pointer; }
   .phone { left: 0; top: 0; width: 100vw; height: 100vh; max-height: 874px; border-radius: 0; }
   .device-status-bar { left: 0; top: 0; width: 100vw; height: auto; }
   .device-bezel { display: none; }
+  .device-frame:has(.home-screen:not([hidden])) { width: 100vw; height: 100vh; }
+  .device-frame:has(.home-screen:not([hidden])) > .phone { width: 100vw; height: 100vh; border-radius: 0; }
 }
 
 /* Updated Figma onboarding pass (264:808 → 264:471) */

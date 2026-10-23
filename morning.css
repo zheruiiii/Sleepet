@@ -153,23 +153,35 @@
 .morning-circle-transition.is-dragging::before { transition: none; }
 .morning-circle-transition.is-covering::before { transition: width .56s cubic-bezier(.17,.77,.25,1), height .56s cubic-bezier(.17,.77,.25,1); }
 .morning-setting-screen { background: linear-gradient(180deg, #001b4a 0%, #86c4e4 27%, #4384c1 65.428%, #001a4b 100%); }
-.morning-setting-back { position: absolute; left: 15px; top: 65px; width: 31px; height: 31px; color: #fff; background: transparent; font: 35px/25px Arial, sans-serif; }
+.device-frame:has(.morning-setting-screen:not([hidden])) { width: 402px; height: 874px; }
+.device-frame:has(.morning-setting-screen:not([hidden])) > .phone { left: 0; top: 0; border-radius: 18px; }
+.device-frame:has(.morning-setting-screen:not([hidden])) > .device-status-bar,
+.device-frame:has(.morning-setting-screen:not([hidden])) > .device-bezel { display: none; }
+.morning-setting-back { position: absolute; left: 20px; top: 64px; width: 24px; height: 28px; display: grid; place-items: center; padding: 0; color: #fff; background: transparent; }
+.morning-setting-back svg { display: block; width: 22px; height: 22px; }
 .morning-setting-screen h1 { position: absolute; left: 108px; top: 62px; font: 500 20px/28px "PingFang SC", Roboto, Arial, sans-serif; white-space: nowrap; }
 .morning-setting-subtitle { position: absolute; left: 54px; top: 98px; color: #d9d9d9; font: 400 16px/22px "PingFang SC", Roboto, Arial, sans-serif; white-space: nowrap; }
 .gentle-start-card { position: absolute; left: 22px; top: 135px; width: 357px; height: 205px; overflow: hidden; border: 1px solid #fff; border-radius: 20px; color: #001b4a; background: #e8f4fd; box-shadow: 0 0 6px rgba(212,231,237,.59); }
 .gentle-start-card h2 { height: 42px; padding: 4px 13px; color: #fff; background: #034579; font: 500 20px/28px "PingFang SC", Roboto, Arial, sans-serif; }
-.gentle-start-card label { position: absolute; left: 17px; display: flex; align-items: center; gap: 12px; height: 25px; font: 400 16px/22px "PingFang SC", Roboto, Arial, sans-serif; cursor: pointer; }
+.gentle-start-card label { position: absolute; left: 17px; display: flex; align-items: center; gap: 8px; height: 25px; font: 400 16px/22px "PingFang SC", Roboto, Arial, sans-serif; cursor: pointer; }
 .gentle-start-card label:nth-of-type(1) { top: 64px; } .gentle-start-card label:nth-of-type(2) { top: 93px; } .gentle-start-card label:nth-of-type(3) { top: 122px; }
-.gentle-start-card input { appearance: none; width: 17px; height: 17px; margin: 0; border: 1px solid #001b4a; border-radius: 2px; background: transparent; }
+.gentle-start-card label > img { flex: 0 0 22px; width: 22px; height: 22px; object-fit: contain; }
+.gentle-start-card input { appearance: none; flex: 0 0 17px; width: 17px; height: 17px; margin: 0; border: 1px solid #001b4a; border-radius: 2px; background: transparent; }
 .gentle-start-card input:checked { background: #001b4a url("./assets/flow/setting-check.svg") center / 8px 10px no-repeat; transform: rotate(90deg); }
 .gentle-divider { position: absolute; left: 9px; top: 156px; width: 335px; height: .2px; }
-.change-routine { position: absolute; left: 105px; top: 171px; width: 145px; height: 23px; color: #001b4a; background: transparent; font: 400 16px/22px "PingFang SC", Roboto, Arial, sans-serif; text-decoration: underline; }
+.change-routine { position: absolute; left: 67px; top: 168px; width: 245px; height: 29px; display: flex; align-items: center; justify-content: flex-start; gap: 10px; padding: 0; color: #001b4a; background: transparent; font: 400 16px/22px "PingFang SC", Roboto, Arial, sans-serif; white-space: nowrap; }
+.change-routine img:first-child { width: 25px; height: 25px; }
+.change-routine span { text-decoration: underline; text-underline-offset: 3px; }
+.change-routine img:last-child { width: 12px; height: 20px; margin-left: 2px; }
 .setting-day-question { position: absolute; left: 21px; top: 376px; width: 316px; font: 500 20px/25px "PingFang SC", Roboto, Arial, sans-serif; }
-.setting-suggestions { position: absolute; left: 21px; top: 439px; width: 353px; display: grid; grid-template-columns: 192px 153px; column-gap: 8px; row-gap: 13px; }
+.setting-suggestions { position: absolute; left: 21px; top: 439px; width: 353px; display: flex; flex-wrap: wrap; column-gap: 10px; row-gap: 7px; }
 .setting-suggestions button { height: 29px; overflow: hidden; border: .5px solid #fff; border-radius: 15px; color: #001a4b; background: rgba(255,255,255,.26); font: 400 15px/21px "PingFang SC", Roboto, Arial, sans-serif; white-space: nowrap; }
 .setting-suggestions button[aria-pressed="true"] { color: #fff; background: #063680; }
 .setting-suggestions button[aria-pressed="true"]::before { content: "✓ "; }
-.setting-suggestions button:nth-child(3) { width: 252px; grid-column: 1; } .setting-suggestions button:nth-child(4) { width: 92px; justify-self: end; grid-column: 2; }
+.setting-suggestions button:nth-child(1) { width: 192px; }
+.setting-suggestions button:nth-child(2) { width: 92px; }
+.setting-suggestions button:nth-child(3) { width: 147px; }
+.setting-suggestions button:nth-child(4) { width: 172px; }
 .setting-events-card { position: absolute; left: 22px; top: 523px; width: 357px; height: 205px; border: 1px solid #fff; border-radius: 20px; color: #001b4a; background: #e8f4fd; box-shadow: 0 0 6px rgba(212,231,237,.59); }
 .setting-date-row { position: absolute; left: 11px; top: 16px; width: 335px; height: 34px; display: flex; align-items: center; justify-content: space-between; background: url("./assets/flow/setting-line.svg") no-repeat left bottom / 335px .1px; font: 500 20px/28px "PingFang SC", Roboto, Arial, sans-serif; }
 .setting-date-row img { width: 24px; height: 24px; }
@@ -204,6 +216,10 @@
 .setting-add-row input { width: 154px; height: 26px; padding: 0; border: 0; outline: none; color: #001b4a; background: transparent; font: 400 16px/22px "PingFang SC", Roboto, Arial, sans-serif; }
 .setting-add-row input::placeholder { color: #001b4a; opacity: 1; }
 .setting-save { left: 55px; top: 765px; width: 291px; background: #001b4a; }
+@media (max-width: 460px) {
+  .device-frame:has(.morning-setting-screen:not([hidden])) { width: 100vw; height: 100vh; }
+  .device-frame:has(.morning-setting-screen:not([hidden])) > .phone { width: 100vw; height: 100vh; border-radius: 0; }
+}
 @keyframes morning-flow-opacity-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes morning-todo-background-in { from { opacity: .68; } to { opacity: 1; } }
 @keyframes morning-todo-reveal { from { opacity: 0; transform: translateY(12px); filter: blur(2px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }

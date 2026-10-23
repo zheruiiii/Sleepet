@@ -4,18 +4,14 @@
   const RATING_KEY = "sleepet-morning-rating-v1";
   const ratingNames = ["Exhausted", "Tired", "Okay", "Refreshed", "Energetic"];
   const stretchStageMs = 2000; // Four displayed checkpoints over six seconds for the demo.
-  const suggestions = ["Go grocery shopping", "Group meeting", "Call dad to celebrate his birthday", "Gym day"];
+  const suggestions = ["Go grocery shopping", "Gym day", "Group meeting", "Call family or a friend"];
   const iconFor = (value) => /grocery|shop/i.test(value) ? "./assets/flow/todos-grocery.svg" : /meeting|group/i.test(value) ? "./assets/flow/todos-meeting.svg" : /email|mail/i.test(value) ? "./assets/flow/todos-email.svg" : "";
-  const tomorrow = () => {
-    const day = new Date();
-    day.setDate(day.getDate() + 1);
-    return [day.getFullYear(), String(day.getMonth() + 1).padStart(2, "0"), String(day.getDate()).padStart(2, "0")].join("-");
-  };
+  const settingReferenceDate = "2026-09-08";
   const defaultSettings = () => ({
     gentle: { water: true, stretch: true, breakfast: false },
-    selected: suggestions.slice(0, 2),
+    selected: ["Go grocery shopping", "Group meeting"],
     custom: [],
-    date: tomorrow()
+    date: settingReferenceDate
   });
   const readSavedSettings = () => {
     try {
@@ -25,7 +21,7 @@
         gentle: { ...defaultSettings().gentle, ...stored.gentle },
         selected: stored.selected.filter((item) => suggestions.includes(item)),
         custom: stored.custom.filter((item) => typeof item === "string" && item.trim()),
-        date: /^\d{4}-\d{2}-\d{2}$/.test(stored.date) ? stored.date : tomorrow()
+        date: /^\d{4}-\d{2}-\d{2}$/.test(stored.date) ? stored.date : settingReferenceDate
       };
     } catch {
       return null;
@@ -471,7 +467,11 @@
   document.querySelectorAll("[data-gentle]").forEach((input) => input.addEventListener("change", () => {
     draftSettings.gentle[input.dataset.gentle] = input.checked;
   }));
-  byId("changeRoutine").addEventListener("click", () => document.querySelector('[data-gentle="water"]').focus());
+  byId("changeRoutine").addEventListener("click", () => {
+    closeCalendar();
+    showPreferences();
+    byId("openTime").click();
+  });
   document.querySelectorAll("#settingSuggestions [data-suggestion]").forEach((button) => button.addEventListener("click", () => {
     const value = button.dataset.suggestion;
     const wasSelected = draftSettings.selected.includes(value);
@@ -502,6 +502,7 @@
 
   const preview = new URLSearchParams(window.location.search).get("preview");
   if (preview === "morning-setting") openSetting();
+  else if (preview === "morning-setting-picker") { openSetting(); byId("changeRoutine").click(); }
   else if (preview === "morning-stretch") show("morning-stretch");
   else if (["morning-todos", "morning-rating", "morning-drink", "morning-end"].includes(preview)) show(preview);
   syncDrinkVideo();

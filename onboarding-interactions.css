@@ -220,7 +220,7 @@
   flex-direction: column;
   overflow: hidden;
   color: #fff;
-  background: #0a2f61 url("./assets/onboarding/raw/home-raw-01.png") center top / cover no-repeat;
+  background: #0a2f61 url("./assets/onboarding/home-background-sunset.png") center top / cover no-repeat;
 }
 
 .onboarding-screen.home-screen > :not(.screen-reference) {
