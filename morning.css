@@ -153,10 +153,7 @@
 .morning-circle-transition.is-dragging::before { transition: none; }
 .morning-circle-transition.is-covering::before { transition: width .56s cubic-bezier(.17,.77,.25,1), height .56s cubic-bezier(.17,.77,.25,1); }
 .morning-setting-screen { background: linear-gradient(180deg, #001b4a 0%, #86c4e4 27%, #4384c1 65.428%, #001a4b 100%); }
-.device-frame:has(.morning-setting-screen:not([hidden])) { width: 402px; height: 874px; }
-.device-frame:has(.morning-setting-screen:not([hidden])) > .phone { left: 0; top: 0; border-radius: 18px; }
-.device-frame:has(.morning-setting-screen:not([hidden])) > .device-status-bar,
-.device-frame:has(.morning-setting-screen:not([hidden])) > .device-bezel { display: none; }
+.device-frame:has(.morning-setting-screen:not([hidden])) > .device-status-bar { display: none; }
 .morning-setting-back { position: absolute; left: 20px; top: 64px; width: 24px; height: 28px; display: grid; place-items: center; padding: 0; color: #fff; background: transparent; }
 .morning-setting-back svg { display: block; width: 22px; height: 22px; }
 .morning-setting-screen h1 { position: absolute; left: 108px; top: 62px; font: 500 20px/28px "PingFang SC", Roboto, Arial, sans-serif; white-space: nowrap; }
@@ -216,10 +213,6 @@
 .setting-add-row input { width: 154px; height: 26px; padding: 0; border: 0; outline: none; color: #001b4a; background: transparent; font: 400 16px/22px "PingFang SC", Roboto, Arial, sans-serif; }
 .setting-add-row input::placeholder { color: #001b4a; opacity: 1; }
 .setting-save { left: 55px; top: 765px; width: 291px; background: #001b4a; }
-@media (max-width: 460px) {
-  .device-frame:has(.morning-setting-screen:not([hidden])) { width: 100vw; height: 100vh; }
-  .device-frame:has(.morning-setting-screen:not([hidden])) > .phone { width: 100vw; height: 100vh; border-radius: 0; }
-}
 @keyframes morning-flow-opacity-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes morning-todo-background-in { from { opacity: .68; } to { opacity: 1; } }
 @keyframes morning-todo-reveal { from { opacity: 0; transform: translateY(12px); filter: blur(2px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
