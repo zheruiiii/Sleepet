@@ -216,10 +216,7 @@ button { border: 0; cursor: pointer; }
 .meet-change { margin-top: 37px; color: #1d4975; background: transparent; font: 400 24px/30px Roboto, Arial, sans-serif; cursor: pointer; }
 
 .home-screen { overflow: hidden; color: #fff; background: #0a2f61 url("./assets/onboarding/home-background-sunset.png") center top / cover no-repeat; }
-.device-frame:has(.home-screen:not([hidden])) { width: 402px; height: 874px; }
-.device-frame:has(.home-screen:not([hidden])) > .phone { left: 0; top: 0; border-radius: 18px; }
 .device-frame:has(.home-screen:not([hidden])) > .device-status-bar { display: none; }
-.device-frame:has(.home-screen:not([hidden])) > .device-bezel { display: none; }
 .home-status-bar { position: absolute; left: 56px; right: 36px; top: 23px; display: flex; align-items: center; justify-content: space-between; color: #fff; font: 600 18px/24px Roboto, Arial, sans-serif; letter-spacing: .1px; pointer-events: none; }
 .home-status-bar img { display: block; width: 80px; height: 16px; }
 .home-greeting { position: absolute; left: 28px; top: 86px; margin: 0; color: #fff; font: 400 21px/28px Roboto, Arial, sans-serif; }
@@ -254,8 +251,6 @@ button { border: 0; cursor: pointer; }
   .phone { left: 0; top: 0; width: 100vw; height: 100vh; max-height: 874px; border-radius: 0; }
   .device-status-bar { left: 0; top: 0; width: 100vw; height: auto; }
   .device-bezel { display: none; }
-  .device-frame:has(.home-screen:not([hidden])) { width: 100vw; height: 100vh; }
-  .device-frame:has(.home-screen:not([hidden])) > .phone { width: 100vw; height: 100vh; border-radius: 0; }
 }
 
 /* Updated Figma onboarding pass (264:808 → 264:471) */
