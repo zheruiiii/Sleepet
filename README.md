@@ -1,6 +1,6 @@
 # Sleepet interactive prototype
 
-live demo: https://qinghao-f.github.io/Sleepet/
+live demo: https://zheruiiii.github.io/Sleepet/
 
 Open `index.html` in a browser. The first screen is the local onboarding flow: animated splash → account → companion choice → personalisation → creating state → Meet → Home. Use the Me icon on Home to return to Preferences.
 
