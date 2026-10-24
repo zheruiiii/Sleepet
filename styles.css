@@ -14,9 +14,10 @@ button, input { font: inherit; }
 button { border: 0; cursor: pointer; }
 
 .demo-shell { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px 24px; overflow: auto; }
-.device-frame { position: relative; flex: 0 0 auto; width: 402px; height: 874px; }
-.phone { position: absolute; z-index: 1; left: 0; top: 0; width: 402px; height: 874px; overflow: hidden; border-radius: 18px; background: linear-gradient(180deg, rgb(0, 27, 74) 0%, rgb(134, 196, 228) 27%, rgb(67, 132, 193) 65.428%, rgb(0, 26, 75) 100%); }
-.device-status-bar { z-index: 80; }
+.device-frame { position: relative; flex: 0 0 auto; width: 450px; height: 920px; filter: drop-shadow(0 24px 38px rgba(0,0,0,.42)); }
+.phone { position: absolute; z-index: 1; left: 24px; top: 23px; width: 402px; height: 874px; overflow: hidden; border-radius: 48px; background: linear-gradient(180deg, rgb(0, 27, 74) 0%, rgb(134, 196, 228) 27%, rgb(67, 132, 193) 65.428%, rgb(0, 26, 75) 100%); }
+.device-status-bar { position: absolute; z-index: 80; left: 24px; top: 23px; width: 402px; height: 62px; object-fit: contain; pointer-events: none; }
+.device-bezel { position: absolute; z-index: 90; inset: 0; width: 450px; height: 920px; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-drag: none; }
 
 .scroll-area { position: absolute; top: 62px; left: 22px; width: 358px; height: 746px; overflow: auto; padding: 0 1px 22px; scrollbar-width: none; }
 .scroll-area::-webkit-scrollbar { display: none; }
@@ -246,8 +247,10 @@ button { border: 0; cursor: pointer; }
 
 @media (max-width: 460px) {
   .demo-shell { padding: 0; display: block; }
-  .device-frame { width: 100vw; height: 100vh; }
+  .device-frame { width: 100vw; height: 100vh; filter: none; }
   .phone { left: 0; top: 0; width: 100vw; height: 100vh; max-height: 874px; border-radius: 0; }
+  .device-status-bar { left: 0; top: 0; width: 100vw; height: auto; }
+  .device-bezel { display: none; }
 }
 
 /* Updated Figma onboarding pass (264:808 → 264:471) */
